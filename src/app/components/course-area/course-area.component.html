@@ -1,0 +1,39 @@
+<!--======================================
+        START COURSE AREA
+======================================-->
+<section class="course-area pb-120px mt-10px">
+    <div class="container">
+        <div class="section-heading text-center">
+            <h5 class="ribbon ribbon-lg mb-2">Choose your desired courses</h5>
+            <h2 class="section__title">The world's largest selection of courses</h2>
+            <span class="section-divider"></span>
+        </div><!-- end section-heading -->
+        <ul class="nav nav-tabs generic-tab justify-content-center pb-4" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="business-tab" data-toggle="tab" href="#business" role="tab"
+                    aria-controls="business" aria-selected="true">Courses</a>
+            </li>
+
+        </ul>
+    </div><!-- end container -->
+    <div class="card-content-wrapper bg-gray pt-50px pb-120px">
+        <div class="container">
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="business" role="tabpanel" aria-labelledby="business-tab">
+                    <div class="row">
+                        <div class="col-lg-4 responsive-column-half" *ngFor="let course of courses">
+                            <app-single-course-area [inputCourse]="course"></app-single-course-area>
+                        </div>
+                    </div>
+                </div><!-- end tab-pane -->
+            </div><!-- end tab-content -->
+            <div class="more-btn-box mt-4 text-center">
+                <a routerLink="/courses" class="btn theme-btn">Browse all Courses <i
+                        class="la la-arrow-right icon ml-1"></i></a>
+            </div><!-- end more-btn-box -->
+        </div><!-- end container -->
+    </div><!-- end card-content-wrapper -->
+</section><!-- end courses-area -->
+<!--======================================
+        END COURSE AREA
+======================================-->

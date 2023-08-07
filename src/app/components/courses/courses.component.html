@@ -1,0 +1,114 @@
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area section-padding img-bg-2">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
+            <div class="section-heading">
+                <h2 class="section__title text-white">Course </h2>
+            </div>
+
+        </div><!-- end breadcrumb-content -->
+    </div><!-- end container -->
+</section><!-- end breadcrumb-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+<!--======================================
+        START COURSE AREA
+======================================-->
+<section class="course-area section--padding">
+    <div class="container">
+        <div class="filter-bar mb-4">
+            <div class="filter-bar-inner d-flex flex-wrap align-items-center justify-content-between">
+                <p class="fs-14">We found <span class="text-black">{{allCourses}}</span> courses available for you</p>
+
+            </div><!-- end filter-bar-inner -->
+        </div><!-- end filter-bar -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="sidebar mb-5">
+                    <div class="card card-item">
+                        <div class="card-body">
+                            <div class="filter-bar-inner d-flex flex-wrap align-items-center justify-content-between">
+                                <form #signupForm="ngForm" (ngSubmit)="searshCourse(searsh)"
+                                    class="d-flex flex-wrap align-items-center">
+                                    <ul class="filter-nav mr-3">
+                                        <li><button class="btn theme-btn" title="Searsh" type="submit"><i
+                                                    class="la la-bars"></i></button></li>
+                                    </ul>
+                                    <div class="select-container select--container ml-100px">
+                                        <select class="select-container-select " [(ngModel)]="searsh" name="searsh">
+                                            <option value="select-a-category" selected="">Searsh</option>
+                                            <option value="Accounting-Personal Finance">Accounting &amp; Personal
+                                                Finance</option>
+                                            <option value="Art-Design">Art &amp; Design</option>
+                                            <option value="Business-Business Management.">Business &amp; Business
+                                                Management</option>
+                                            <option value="it-and-software">IT &amp; Software</option>
+                                            <option value="Communication-Speech">Communication &amp; Speech</option>
+                                            <option value="History">History</option>
+                                            <option value="Journalism-Writing.">Journalism &amp; Writing</option>
+                                            <option value="Physical-Education">Physical Education</option>
+                                            <option value="Political Science">Political Science</option>
+                                            <option value="music">Music</option>
+                                            <option value="other">Other</option>
+                                        </select>
+
+                                    </div>
+                                </form>
+                            </div><!-- end filter-bar-inner -->
+                        </div>
+                    </div><!-- end card -->
+
+                    <div class="card card-item">
+                        <div class="card-body">
+                            <h3 class="card-title fs-18 pb-2">Features</h3>
+                            <div class="divider"><span></span></div>
+                            <div class="custom-control custom-checkbox mb-1 fs-15">
+                                <input type="checkbox" class="custom-control-input" id="featureCheckbox" required>
+                                <label class="custom-control-label custom--control-label text-black"
+                                    for="featureCheckbox">
+                                    Captions
+                                </label>
+                            </div><!-- end custom-control -->
+                            <div class="custom-control custom-checkbox mb-1 fs-15">
+                                <input type="checkbox" class="custom-control-input" id="featureCheckbox2" required>
+                                <label class="custom-control-label custom--control-label text-black"
+                                    for="featureCheckbox2">
+                                    Quizzes
+                                </label>
+                            </div><!-- end custom-control -->
+                            <div class="custom-control custom-checkbox mb-1 fs-15">
+                                <input type="checkbox" class="custom-control-input" id="featureCheckbox3" required>
+                                <label class="custom-control-label custom--control-label text-black"
+                                    for="featureCheckbox3">
+                                    Coding Exercises
+                                </label>
+                            </div><!-- end custom-control -->
+                            <div class="custom-control custom-checkbox mb-1 fs-15">
+                                <input type="checkbox" class="custom-control-input" id="featureCheckbox4" required>
+                                <label class="custom-control-label custom--control-label text-black"
+                                    for="featureCheckbox4">
+                                    Practice Tests
+                                </label>
+                            </div><!-- end custom-control -->
+                        </div>
+                    </div><!-- end card -->
+                </div><!-- end sidebar -->
+            </div><!-- end col-lg-4 -->
+            <div class="col-lg-8">
+                <div class="card card-item card-preview card-item-list-layout" data-tooltip-content="#tooltip_content_1"
+                    *ngFor="let course of courses">
+                    <app-single-course [inputCourse]="course"></app-single-course>
+                </div>
+            </div>
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end courses-area -->
+<!--======================================
+        END COURSE AREA
+======================================-->
+<app-footer></app-footer>

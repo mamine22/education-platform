@@ -1,0 +1,39 @@
+<div class="card card-item card-preview card-item-list-layout" data-tooltip-content="#tooltip_content_1">
+    <div class="card-image">
+        <a  class="d-block">
+            <img class="card-img-top lazy" src="assets/images/img8.jpg" 
+                alt="Card image cap">
+        </a>
+        <div class="course-badge-labels">
+            <div class="course-badge mr-1">{{inputCourse.hours}} Hour/s</div>
+            <div class="course-badge blue">{{inputCourse.language}}</div>
+        </div>
+    </div><!-- end card-image -->
+    <div class="card-body">
+        <h6 class="ribbon ribbon-blue-bg fs-14 mb-3">{{inputCourse.category}}</h6>
+        <h5 class="card-title"><p >{{inputCourse.title}}</p></h5>
+        <p class="card-text"><a [routerLink]="['/teacher-details/', user._id]">{{user.firstName}} {{user.lastName}}</a></p>
+        <div class="rating-wrap d-flex align-items-center py-2">
+            <div class="review-stars">
+                <span class="rating-number">4.4</span>
+                <span class="la la-star"></span>
+                <span class="la la-star"></span>
+                <span class="la la-star"></span>
+                <span class="la la-star"></span>
+                <span class="la la-star-o"></span>
+            </div>
+            <span class="rating-total pl-1">(20,230)</span>
+        </div><!-- end rating-wrap -->
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="card-price text-black font-weight-bold">{{inputCourse.description}} <span
+                    class="before-price font-weight-medium"></span></p>
+           
+        </div>
+        <div class="nav-right-button d-grid gap-2 d-md-flex justify-content-md-end mr-2 mt-2" >
+            <a (click)="goToCourseDetails([inputCourse.id])" style="color:white" class="btn theme-btn theme-btn-sm lh-26 shadow-none "><i
+                    class="la la-plus mr-1"></i> Read More</a>
+            <button *ngIf="inputCourse.role != 'teacher' && connectedUser == inputCourse.userId" (click)="deleteCourse()" class="btn theme-btn-sm lh-26 theme-btn-white shadow-none ml-2 "><i
+                class="la la-exclamation-circle  "></i> Delete</button>
+        </div><!-- end nav-right-button -->  
+    </div><!-- end card-body -->
+    </div><!-- end card-body -->

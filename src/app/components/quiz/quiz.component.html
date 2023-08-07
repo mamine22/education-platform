@@ -1,0 +1,169 @@
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area">
+    <div class="bg-white py-3 pattern-bg">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <ul class="quiz-nav d-flex flex-wrap align-items-center">
+                    <li><a href="course-details.html"><i class="la la-arrow-left mr-2"></i>Back to Course</a></li>
+                    <li>
+                        <div class="d-flex align-items-center">
+                            <a href="course-details.html">
+                                <img src="assets/images/angular.png" alt="Angular thumbnail">
+                            </a>
+                            <p>
+                                <a href="course-details.html">Angular Fundamentals</a><span class="d-block fs-13">Brad
+                                    Traversy</span>
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- end breadcrumb-content -->
+        </div><!-- end container -->
+    </div>
+    <div class="bg-dark pt-60px pb-60px">
+        <div class="container">
+            <ul class="quiz-course-nav d-flex align-items-center justify-content-between">
+                <li>
+                    <a href="course-details.html" class="icon-element icon-element-sm" data-toggle="tooltip"
+                        data-placement="top" title="Getting Started with Angular: Introduction">
+                        <i class="la la-check"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="course-details.html" class="icon-element icon-element-sm" data-toggle="tooltip"
+                        data-placement="top" title="Getting Started with Angular: Introduction to TypeScript">
+                        <i class="la la-check"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="course-details.html" class="icon-element icon-element-sm" data-toggle="tooltip"
+                        data-placement="top" title="Getting Started with Angular: Comparing Angular to AngularJS">
+                        <i class="la la-check"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="student-quiz.html" class="icon-element icon-element-sm text-success" data-toggle="tooltip"
+                        data-placement="top" title="Quiz: Getting Started with Angular">
+                        <i class="la la-user"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="breadcrumb-content pt-40px">
+                <div class="section-heading">
+                    <h2 class="section__title text-white fs-30 pb-2">Question 1 of 9</h2>
+                    <p class="section__desc text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Accusamus deleniti deserunt dolorum eligendi exercitationem, facere fuga, hic laudantium
+                        obcaecati officia omnis qui quia quisquam rem sed sit ullam velit voluptatibus?</p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div>
+    <div class="quiz-action-nav bg-white py-3 shadow-sm">
+        <div class="container">
+            <div class="quiz-action-content d-flex flex-wrap align-items-center justify-content-between">
+                <ul class="quiz-nav d-flex align-items-center">
+                    <li><i class="la la-sliders fs-17 mr-2"></i>Choose the correct answer below</li>
+                </ul>
+                <div class="quiz-nav-btns">
+                    <button (click)="prevQuestion()" [disabled]="current===0" class="btn theme-btn"><i
+                            class="la la-angle-left icon ml-1"></i> Prev Question </button>
+                    <a href="course-details.html" class="btn theme-btn theme-btn-transparent mr-2">Review Video</a>
+                    <button (click)="nextQuestion()" class="btn theme-btn">Next Question <i
+                            class="la la-angle-right icon ml-1"></i></button>
+
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end quiz-action-nav -->
+</section><!-- end breadcrumb-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+<!-- ================================
+       START QUIZ ANS AREA
+================================= -->
+<section class="quiz-ans-wrap pt-60px pb-60px">
+    <div class="container">
+        <div class="card" >
+            <div class="d-flex justify-content-between p-3">
+                <div class="quiz-header">
+                    <h1 class="fs-22 font-weight-semi-bold">Course Quiz</h1>
+                </div>
+                <div class="quiz-header">
+                    <h1 class="fs-22 font-weight-semi-bold">Welcome {{user.firstName}}</h1>
+                </div>
+                <!-- <p class="fs-15"><strong class="font-weight-semi-bold text-black">Note:</strong> There can be multiple
+                    correct answers to this question.</p> -->
+            </div>
+            <div class="d-flex justify-content-center py-3">
+                
+                <div class="question-remain">
+                    <span style="font-style: italic;">Question {{current+1}} of {{questions.length}}</span>
+                </div>
+                
+            </div>
+            <div class="progress mb-3" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar bg-danger" [ngStyle]="{'width': progress+'%'}"></div>
+              </div>
+            <div class="question">
+                <div class="card">
+                    <h3>{{questions[current].questionText}}</h3>
+                </div>
+            </div>
+            <div class="options">
+                <ol *ngFor="let option of questions[current].options" >
+                    <li (click)="answer(current+1,option)">
+                        <div class="card">
+                            {{option.text}}
+                        </div>
+
+                    </li>
+                </ol>
+            </div>
+            
+        </div><!-- end container -->
+        
+    </div><!-- end container -->
+</section>
+<!-- ================================
+       START QUIZ ANS AREA
+================================= -->
+
+<!--======================================
+        START CTA AREA
+======================================-->
+<section class="cta-area py-5 position-relative overflow-hidden bg-gray">
+    <span class="stroke-shape stroke-shape-1"></span>
+    <span class="stroke-shape stroke-shape-2"></span>
+    <span class="stroke-shape stroke-shape-3"></span>
+    <span class="stroke-shape stroke-shape-4"></span>
+    <span class="stroke-shape stroke-shape-5"></span>
+    <span class="stroke-shape stroke-shape-6"></span>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="cta-content-wrap">
+                    <h3 class="fs-20 font-weight-semi-bold lh-28">Top companies choose <a href="for-business.html"
+                            class="text-color hover-underline">Aduca for Business</a> to build in-demand career skills.
+                    </h3>
+                </div>
+            </div><!-- end col-lg-6 -->
+            <div class="col-lg-6">
+                <div class="client-logo-wrap text-right">
+                    <a href="#" class="client-logo-item client--logo-item-2 pr-3"><img
+                            src="assets/images/sponsor-img.png" alt="brand image"></a>
+                    <a href="#" class="client-logo-item client--logo-item-2 pr-3"><img
+                            src="assets/images/sponsor-img2.png" alt="brand image"></a>
+                    <a href="#" class="client-logo-item client--logo-item-2 pr-3"><img
+                            src="assets/images/sponsor-img3.png" alt="brand image"></a>
+                </div><!-- end client-logo-wrap -->
+            </div><!-- end col-lg-6 -->
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end cta-area -->
+<!--======================================
+        END CTA AREA
+======================================-->

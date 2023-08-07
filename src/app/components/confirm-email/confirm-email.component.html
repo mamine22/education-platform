@@ -1,0 +1,46 @@
+<!--======================================
+        START INVITE AREA
+======================================-->
+<section class="invite-area section-padding bg-warning">
+    <div class="container">
+        <div class="col-lg-8 mx-auto">
+            <div class="card card-item mb-0">
+                <div class="icon-element icon-element-lg shadow-sm mx-auto invite-icon">
+                    <img src="assets/images/favicon.png" alt="aduca">
+                </div><!-- end icon-element -->
+                <div class="card-body">
+                    <h5 class="card-title fs-28 pb-2 lh-35">Hi {{user.firstName}} {{user.lastName}}</h5>
+                    <p class="card-text pb-4">To activate your MAmin Account, please verify account.
+                        Your account will not be created until your email or phone number is confirmed.</p>
+                    <h5 class="card-title pb-2">Confirm your account</h5>
+                    <div class="copy-to-clipboard pb-4">
+                        <div class="input-group">
+                            <input type="text" class="form-control form--control copy-input pl-3"
+                                placeholder="Verfiy your code here" [(ngModel)]="user.code" name="code">
+                            <div class="input-group-append">
+                                <button class="btn theme-btn theme-btn-sm copy-btn shadow-none" type="submit" (click)="sendReqeust()"><i
+                                        class="la la-copy mr-1" ></i> Send Request</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+
+                            <button class="btn theme-btn theme-btn-sm copy-btn shadow-none mt-2" (click)="confirmSMS()"
+                                type="submit"><i class="submit"></i> Confirm</button>
+                        </div>
+                    </div><!-- end copy-to-clipboard -->
+                    <ul class="social-icons social-icons-styled social--icons-styled">
+                        <li><a href="#"><i class="la la-facebook"></i></a></li>
+                        <li><a href="#"><i class="la la-twitter"></i></a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#shareViaEmailModal"><i
+                                    class="la la-envelope"></i></a></li>
+                    </ul>
+                </div><!-- end card-body -->
+            </div><!-- end card -->
+        </div>
+    </div><!-- end container -->
+</section><!-- end invite-area -->
+<!--======================================
+        END INVITE AREA
+======================================-->
+<app-footer></app-footer>

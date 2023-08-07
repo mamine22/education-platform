@@ -1,0 +1,59 @@
+
+
+<section class="hero-area position-relative hero-area-3">
+    <div class="hero-slider-item hero-bg-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <div class="section-heading">
+                            <h2 class="section__title text-white fs-45 lh-55 pb-3">
+                                {{user.firstName}} {{user.lastName}}
+                            </h2>
+                            <p class="section__desc text-white pb-4">Who tells you can’t do it? Build the confidence, skills, and qualifications to take control of your future. Start one of our 1000 high quality courses from the world’s leading experts today!</p>
+                        </div><!-- end section-heading -->
+                        <form method="post" class="w-75 pt-2">
+                            <label class="label-text bg-white rounded py-1 px-2 fs-14 font-weight-medium lh-20">What do you want to learn?</label>
+                            <div class="form-group mb-0">
+                                <div method="post" class="w-50 pt-2">
+                                    <div class="form-group mb-0">
+                
+                                        <div class="select-container w-auto">
+                                            <select class="select-container-select" [(ngModel)]="teach" name="teach"
+                                                 >
+                                                <option selected="">Affect Teacher</option>
+                                                <option *ngFor="let teacher of teachers" [value]="teacher._id">
+                                                    {{teacher.firstName}} </option>
+                                            </select>
+                                            <div class="course-submit-btn-box mt-2">
+                                                <button class="btn theme-btn" type="submit" (click)="affectation(teach)"
+                                                    id="liveAlertBtn">Affect</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                               
+                            </div>
+                        </form>
+                    </div><!-- end hero-content -->
+                </div><!-- end col-lg-7 -->
+                <div class="col-lg-5">
+                    <div class="row hero-category-wrap">
+                        <h2 class="section__title text-white fs-45 lh-55 pb-3">
+                            Already Affected To 
+                        </h2>
+                        <div class="col-lg-4 responsive-column-half " *ngFor="let teacher of teachers">
+                           
+                                <app-single-teacher  [inputTeacher]="teacher"></app-single-teacher>
+
+                        </div><!-- end col-lg-4 -->
+                       
+                    </div><!-- end row -->
+                </div><!-- end col-lg-5 -->
+            </div><!-- end row -->
+        </div><!-- end container -->
+    </div><!-- end hero-slider-item -->
+</section><!-- end hero-area -->
+<!--================================
+        END HERO AREA
+=================================-->
+<app-footer></app-footer>

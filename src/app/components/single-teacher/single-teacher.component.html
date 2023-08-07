@@ -1,0 +1,11 @@
+
+<div class="card card-item member-card text-center">
+    <div class="card-image">
+        <img class="card-img-top" [src]="inputTeacher.img" alt="team member">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title"><a href="teacher-detail.html">{{inputTeacher.firstName}} {{inputTeacher.lastName}}</a></h5>
+        <p class="card-text">Teacher</p>
+        <button type="submit" (click)="goToTeacher([inputTeacher._id])" class="btn theme-btn theme-btn-sm theme-btn-transparent mt-3">View Profile <i class="la la-arrow-right icon ml-1"></i></button >
+    </div>
+</div><!-- end card -->
